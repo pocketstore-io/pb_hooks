@@ -1,0 +1,11 @@
+{{define "title"}}
+    Order Confirmation
+{{end}}
+
+{{define "body"}}
+    <b>Bestellbestätigung (<span style="color:red">{{.order}}</span>)</b>
+    <p>
+        Hallo <b>{{.name}}</b>, <br>
+        wir haben deine Bestellung erhalten um {{.date}}. <br><br>
+    </p>
+{{end}}
