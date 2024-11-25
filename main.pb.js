@@ -1,7 +1,7 @@
 /// <reference path="../pb_data/types.d.ts" />
 
-onRecordAfterCreateRequest((e) => {
-    const customer = $app.dao().findRecordById("customer", e.record.get("customer"))
+onRecordCreateRequest((e) => {
+    const customer = $app.findRecordById("customer", e.record.get("customer"))
 
     const template = $template.loadFiles(
         `${__hooks}/views/layout.html`,
@@ -28,4 +28,5 @@ onRecordAfterCreateRequest((e) => {
         html: template
     })
     $app.newMailClient().send(message);
+    e.next()
 }, "orders")
