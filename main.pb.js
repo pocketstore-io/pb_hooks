@@ -30,11 +30,3 @@ onRecordCreateRequest((e) => {
     $app.newMailClient().send(message);
     e.next()
 }, "orders")
-
-migrate((app) => {
-    const settings = app.settings()
-    settings.meta.appName = "PocketStore.io - Demo"
-    settings.logs.maxDays = 1
-
-    app.save(settings)
-})
